@@ -13,7 +13,9 @@ def fn_EliminarAgotados_lst(productos_lst):
     Elimina del inventario los productos con stock 0
     y devuelve la lista de productos que quedan.
     """
-    for producto_dic in productos_lst:
+    for producto_dic in productos_lst[:]:
+        "Comentario Valentina: No se pueden eliminar elementos de una lista mientras se recorre,"
+        "por eso se hacemos una copia con [:]"
         if producto_dic["stock"] == 0:
             productos_lst.remove(producto_dic)
 
