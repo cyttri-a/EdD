@@ -32,7 +32,9 @@ def fn_ValorPorCategoria_dic(productos_lst):
     for producto_dic in productos_lst:
         categoria_str = producto_dic["categoria"]
         precio_fl = producto_dic["precio"]
-        unidades_int = producto_dic["minimo"]
+        unidades_int = producto_dic["stock"]
+        "Comentario Valentina: Se calcula el valor del producto multiplicando el precio por las unidades en stock"
+        "No por la de mínimo como estaba puesto antes."
         valor_fl = precio_fl * unidades_int
 
         valores_dic[categoria_str] = valores_dic.get(categoria_str, 0) + valor_fl
